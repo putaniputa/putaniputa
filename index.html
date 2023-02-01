@@ -10,11 +10,37 @@
 <body>
     <a href="index.html"><img src="assets/PutaniPutaLogoLowRes.jpg"></a>
     <div style="text-align:center;">
-        <span style="font-weight: bold; color:blueviolet; font-size: 150%;">Happy New Year 2023 !</span>
-        <br>
-        <br>We made a beautiful calendar for you - hope you like it.
+        <br>We made beautiful calendars for you - hope you like it.
         <br><br>
-        <img width="90%" src="assets/2023-Jan-Poster.jpeg">
+        <img class="monthSlide" width="90%" src="assets/2023-Feb-Poster.jpg">
+        <img class="monthSlide" width="90%" src="assets/2023-Jan-Poster.jpeg">
+        <br>
+        <button onclick="nextPoster(-1)">&#10094;</button>
+        <button onclick="nextPoster(+1)">&#10095;</button>
+
+        <script>
+            var posterId = 1;
+            showPoster(posterId);
+    
+            function nextPoster(n) {
+                showPoster(posterId += n);
+            }
+    
+            function showPoster(n) {
+                var i;
+                var x = document.getElementsByClassName("monthSlide");
+                if (n > x.length) {
+                    posterId = 1
+                }
+                if (n < 1) {
+                    posterId = x.length
+                } ;
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                x[posterId - 1].style.display = "block";
+            }
+        </script>
     </div>
     <ol>
         <li>Print it on your own for free - for print intructions scroll down</li>
@@ -41,10 +67,18 @@
     <ol>
         <li>You can print the below links for your own use</li>
         <li>You can also give out prints to anyone for free - but no you can't use it for commercial or business purposes without prior written permission from us</li>
+    </ol>
+    <b>2023 February</b>
+    <ol>
+            <li>Printable for <a href="assets/2023-Feb-OneSheet.pdf">Large size on A3 sheet</a></li>
+            <li>Printable for <a href="assets/2023-Feb-TwoSheets.pdf">Large size on two A4 sheets that need to be stuck together</a></li>
+            <li>Printable for <a href="assets/2023-Feb-OneSheet.pdf">Small size on single A4 sheet</a></li>
+    </ol>
+    <b>2023 January</b>
+    <ol>
         <li>Printable for <a href="assets/2023-Jan-OneSheet.pdf">Large size on A3 sheet</a></li>
         <li>Printable for <a href="assets/2023-Jan-TwoSheets.pdf">Large size on two A4 sheets that need to be stuck together</a></li>
         <li>Printable for <a href="assets/2023-Jan-OneSheet.pdf">Small size on single A4 sheet</a></li>
-
     </ol>
     <hr>
     Disclaimer: We have tried to represent events inspired by real life with artistic liberty and believe the information presented is correct to the best of our knowledge, in case of errors - please let us know at above email addresses. Thank you.
